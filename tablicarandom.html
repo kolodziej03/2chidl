@@ -1,0 +1,35 @@
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="losuj">losuj</button>
+    <label
+        >kolor: <input type="color" name="kolor" id="kolor" value="#"
+      /></label>
+      <button id="guz">zaakcpetuj kolor</button>
+      zawartosc tablicy: "Tomek", "Bartek", "Mateusz", "Szymon", "Maks", "Mikolaj", "Pawel"
+<ol></ol>
+    <script>
+        const tab = new Array("Tomek", "Bartek", "Mateusz", "Szymon", "Maks", "Mikolaj", "Pawel");
+const ol = document.querySelector("ol");
+const los = document.querySelector("#losuj");
+const kolor = document.querySelector("#kolor")
+const li = document.createElement("li");
+ol.appendChild(li);
+los.addEventListener('click', function(){
+
+const ilosc = tab.length;
+const loso = Math.floor(Math.random()*ilosc);
+li.innerHTML = tab[loso];
+});
+guz.addEventListener('click', function(){
+li.style.backgroundColor = kolor.value;
+});
+        </script>
+</body>
+</html>
